@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="197px" height="195px" viewBox="0 0 197 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>CraigBookerLogo Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M43.2011719,82.6601562 C58.1914062,82.6601562 69.3242188,74.3105469 71.6679688,61.3710938 L62.7324219,61.3710938 C60.4863281,69.5253906 53.015625,74.5546875 43.2011719,74.5546875 C29.6269531,74.5546875 21.1308594,63.4707031 21.1308594,45.7949219 C21.1308594,28.1191406 29.6269531,16.9863281 43.1523438,16.9863281 C52.8691406,16.9863281 60.3886719,22.6992188 62.7324219,31.78125 L71.6679688,31.78125 C69.5683594,18.2070312 57.9960938,8.88085938 43.1523438,8.88085938 C24.0117188,8.88085938 12.0976562,23.0410156 12.0976562,45.7949219 C12.0976562,68.5 24.0605469,82.6601562 43.2011719,82.6601562 Z M113.904297,81 C128.894531,81 137.78125,73.6269531 137.78125,61.2246094 C137.78125,51.8984375 131.677734,45.3066406 122.058594,44.0859375 L122.058594,43.3046875 C128.845703,42.0839844 134.216797,35.4433594 134.216797,28.1191406 C134.216797,17.328125 126.306641,10.5410156 113.367188,10.5410156 L86.4140625,10.5410156 L86.4140625,81 L113.904297,81 Z M109.265625,40.9121094 L95.203125,40.9121094 L95.203125,18.3046875 L111.511719,18.3046875 C120.251953,18.3046875 125.330078,22.4550781 125.330078,29.6328125 C125.330078,37.1035156 119.910156,40.9121094 109.265625,40.9121094 Z M112.585938,73.2363281 L95.203125,73.2363281 L95.203125,48.4804688 L111.755859,48.4804688 C122.986328,48.4804688 128.748047,52.6308594 128.748047,60.7851562 C128.748047,68.9394531 123.181641,73.2363281 112.585938,73.2363281 Z" id="path-1"></path>
+        <filter x="-5.6%" y="-6.8%" width="111.1%" height="119.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="CraigBookerLogo-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#000000" fill="#000000" cx="98.5" cy="97.5" r="95.5"></circle>
+        <circle id="Oval-Copy" stroke="#FFFFFF" stroke-width="8" fill="#000000" cx="98.5" cy="98.5" r="82.5"></circle>
+        <g id="Group-2" transform="translate(24.000000, 52.000000)" fill-rule="nonzero">
+            <g id="CB">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
