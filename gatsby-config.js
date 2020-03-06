@@ -3,8 +3,7 @@ const config = require('./src/data/config');
 module.exports = {
 	siteMetadata: {
 		siteUrl: config.url,
-		title:
-			'ZeroToDev | A site documenting what it means to go from zero to developer.',
+		title: config.defaultTitle,
 		author: config.author,
 		description: config.defaultDescription
 	},

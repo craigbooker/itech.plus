@@ -1,10 +1,10 @@
 ---
 templateKey: index-page
-title: Hi, I'm Craig Booker
-subheading: I am exploring what it means to go from zero to dev.
+title: Welcome to ITECH PLUS
+subheading: A site discussing iOS and related technology.
 image: /img/helloWorld1.jpg
 heading: Welcome to zerotodev!
-description: A site documenting what it means to go from zero to developer.
+description: A site discussing iOS and related technology.
 mainpitch:
   title: My name is Craig Booker
   description: >

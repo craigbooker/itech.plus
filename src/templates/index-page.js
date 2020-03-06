@@ -48,24 +48,6 @@ export const IndexPageTemplate = ({
 					<div className='columns'>
 						<div className='column is-10 is-offset-1'>
 							<div className='content'>
-								<div className='content'>
-									<h1 className='has-text-weight-semibold is-size-2'>
-										{heading}
-									</h1>
-								</div>
-								<div className='columns'>
-									<div className='column is-12'>
-										<h3 className='content'>{mainpitch.title}</h3>
-										<p>{mainpitch.description}</p>
-									</div>
-									<div className='column is-2'>
-										<img
-											className='imgStyle'
-											src='/img/craig-booker.jpg'
-											alt='Craig Booker'
-										/>
-									</div>
-								</div>
 								<div className='column is-12'>
 									<h3 className='has-text-weight-semibold is-size-2'>
 										Recent Articles

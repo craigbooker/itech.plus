@@ -1,15 +1,14 @@
 module.exports = {
 	defaultTitle:
-		'ZeroToDev | A site documenting what it means to go from zero to developer.',
-	logo: 'https://zerotodev.net/img/favicon.png',
+		'itech.plus | A site discussing iOS devices and related hardware.',
+	logo: 'https://itech.plus/img/favicon.png',
 	author: 'Craig Booker',
-	url: 'https://zerotodev.net',
+	url: 'https://itech.plus',
 	defaultDescription:
-		'My name is Craig Booker. I am an iOS developer and writer.',
+		'My name is Craig Booker. I am a writer and iOS developer.',
 	socialLinks: {
-		twitter: 'https://twitter.com/craigbooker',
-		facebook: 'https://facebook.com/craigbooker',
-		instagram: 'https://instagram.com/craigbooker',
-		vimeo: 'https://vimeo.com/craigbooker'
+		twitter: 'https://twitter.com/itechplus',
+		facebook: 'https://facebook.com/itechdotplus',
+		vimeo: 'https://vimeo.com/itechplus'
 	}
 };

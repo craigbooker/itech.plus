@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import craigAvatar from '../../static/img/craig-booker.jpg';
+import itechplusAvatar from '../../static/img/itech-plus.png';
 
 const Navbar = class extends React.Component {
 	constructor(props) {
@@ -37,9 +37,11 @@ const Navbar = class extends React.Component {
 				<div className='container'>
 					<div className='navbar-brand'>
 						<Link to='/' className='navbar-item' title='Logo'>
-							<img src={craigAvatar} alt='Craig Booker' />
+							<img src={itechplusAvatar} alt='ITECH PLUS' />
 						</Link>
-						<strong className='navbar-item'>ZeroToDev</strong>
+						<Link to='/' className='navbar-item' title='LogoText'>
+							<strong className='navbar-item'>ITECH PLUS</strong>
+						</Link>
 						{/* Hamburger menu */}
 						<div
 							className={`navbar-burger burger ${this.state.navBarActiveClass}`}
