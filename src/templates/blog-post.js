@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
+import BlogPageHeader from '../components/BlogPageHeader';
 import Content, { HTMLContent } from '../components/Content';
 import craigAvatar from '../../static/img/craig-booker.jpg';
 import tagsSVG from '../img/fa-tags.svg';
@@ -27,43 +28,13 @@ export const BlogPostTemplate = ({
 	return (
 		<div className='blog-post'>
 			{helmet || ''}
-			<div
-				className='full-width-image margin-top-0'
-				style={{
-					backgroundImage: `url(${
-						!!image.childImageSharp ? image.childImageSharp.fluid.src : image
-					})`,
-					backgroundPosition: `top left`,
-					backgroundAttachment: `fixed`
-				}}
-			>
-				<div className='blog-title-wrap'>
-					<h1 className='has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen'>
-						{title}
-					</h1>
-					<div className='has-text-centered;'>
-						<span id='publish-date'>
-							<span aria-labelledby='publish-date' role='img'>
-								📅
-							</span>{' '}
-							Published on {date}
-						</span>{' '}
-						by Craig Booker{' '}
-						<span id='reading-time'>
-							<span aria-labelledby='reading-time' role='img'>
-								🕑
-							</span>{' '}
-							{readingtime}
-						</span>{' '}
-						<span id='wordcount'>
-							<span aria-labelledby='wordcount' role='img'>
-								🖹
-							</span>{' '}
-							{wordcount} words
-						</span>
-					</div>
-				</div>
-			</div>
+			<BlogPageHeader
+				title={title}
+				date={date}
+				image={image}
+				readingtime={readingtime}
+			/>
+
 			<div className='container content article'>
 				<div className='columns'>
 					<div className='column is-10 is-offset-1'>
@@ -143,7 +114,7 @@ const BlogPost = ({ data }) => {
 				frontmatter={post.frontmatter}
 				tags={post.frontmatter.tags}
 				title={post.frontmatter.title}
-				image={post.frontmatter.image}
+				image={post.frontmatter.featuredimage}
 				wordcount={post.fields.readingTime.words}
 				slug={post.fields.slug}
 				readingtime={post.fields.readingTime.text}
@@ -188,7 +159,7 @@ export const pageQuery = graphql`
 			}
 			frontmatter {
 				date(formatString: "MMMM DD, YYYY")
-				image {
+				featuredimage {
 					publicURL
 					childImageSharp {
 						fluid(maxWidth: 1280, quality: 75) {
@@ -196,7 +167,7 @@ export const pageQuery = graphql`
 						}
 					}
 				}
-				emoji
+
 				title
 				description
 				tags
