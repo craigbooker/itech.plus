@@ -5,7 +5,7 @@
 // Kaldi logo brand color: #FD461E
 
 // Color Scheme
-$main-black: #00BABB;
+$main-black: #000000;
 $main-black-invert: #fff;
 $primary: $main-black;
 $primary-invert: $main-black-invert;
@@ -71,10 +71,10 @@ $gray: #3B414A;
     border-radius: .25rem;
     text-decoration: none;
     font-weight: 700;
-    color: #00BABB;
+    color: #000000;
     text-align: center;
-    -webkit-box-shadow: inset 0 0 0 2px #00BABB;
-    box-shadow: inset 0 0 0 2px #00BABB;
+    -webkit-box-shadow: inset 0 0 0 2px #000000;
+    box-shadow: inset 0 0 0 2px #000000;
     -webkit-transition: all .15s ease;
     transition: all .15s ease;
   }
