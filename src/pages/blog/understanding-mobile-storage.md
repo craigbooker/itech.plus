@@ -6,6 +6,7 @@ featuredpost: false
 featuredimage: /img/blog/protectingYourMobileData-noTxt-fb.jpg
 description:
 tags:
+  - Protecting Our Mobile Data
   - Mobile Storage
 ---
 
