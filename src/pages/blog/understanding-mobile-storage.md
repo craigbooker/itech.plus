@@ -18,7 +18,7 @@ Awareness is one of the most critical assets when it comes to protecting our dat
 
 ## Defining Your Use-case
 
-What functions do you do on a daly basis?
+What functions do you do on a daily basis?
 For instance, I use it to read the news, the Bible, to keep a journal. I also use it for interacting with financial institutions, finding restaurants, or going to the movie. I shop… I buy a lot of basic necessities through the use of my phone. As many do, I take a lot of photos. I use it to document receipts, keep records, etc. I use it to listen to audiobooks, podcasts, and videos. I am fairly social on my devices. I interact on social media, talk with friends, keep up with family. So by writing these things down, I can be aware of the data which might be on my phone. More importantly, I know which data I could live with and without. My intent here is to start the discussion which in turn will lead to identify the right backup solutions for your mobile device(s).
 
 ## Solution Types
