@@ -1,0 +1,11 @@
+.series-center {
+	width: 80vw;
+	margin: 0 auto;
+}
+
+h4 {
+	text-align: center;
+	letter-spacing: 7px;
+	color: var(--primaryColor);
+	text-transform: uppercase;
+}

@@ -1,0 +1,12 @@
+.textarea:not([rows]) {
+	max-height: 40em;
+	min-height: 8em;
+}
+
+.input,
+.textarea {
+	background-color: #ffffff;
+	border-color: #dbdbdb;
+	border-radius: 4px;
+	color: #363636;
+}

@@ -1,79 +1,200 @@
-const config = require('./src/data/config');
+const urljoin = require('url-join');
+const path = require('path');
+const config = require('./data/SiteConfig');
 
 module.exports = {
+	pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
 	siteMetadata: {
-		siteUrl: config.url,
-		title: config.defaultTitle,
-		author: config.author,
-		description: config.defaultDescription
+		title: config.siteTitle,
+		description: config.siteDescription,
+		baseUrl: config.siteUrl,
+		siteUrl: urljoin(config.siteUrl, config.pathPrefix),
+		rssMetadata: {
+			site_url: urljoin(config.siteUrl, config.pathPrefix),
+			feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
+			title: config.siteTitle,
+			description: config.siteDescription,
+			image_url: `${urljoin(
+				config.siteUrl,
+				config.pathPrefix
+			)}/logos/logo-512.png`,
+			copyright: config.copyright,
+		},
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sass',
+		'gatsby-plugin-lodash',
 		{
-			// keep as first gatsby-source-filesystem plugin for gatsby image support
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				path: `${__dirname}/static/img`,
-				name: 'uploads'
-			}
+				name: 'assets',
+				path: `${__dirname}/static/`,
+			},
 		},
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				path: `${__dirname}/src/pages`,
-				name: 'pages'
-			}
+				name: 'mdPosts',
+				path: `${__dirname}/content/`,
+			},
 		},
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				path: `${__dirname}/src/img`,
-				name: 'images'
-			}
+				name: 'posts',
+				path: `${__dirname}/content/posts`,
+			},
 		},
-		'gatsby-plugin-sharp',
-		'gatsby-transformer-sharp',
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'series',
+				path: `${__dirname}/content/series`,
+			},
+		},
+		`gatsby-remark-images`,
+		{
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				gatsbyRemarkPlugins: [
+					{
+						resolve: 'gatsby-remark-images',
+					},
+				],
+			},
+		},
 		{
 			resolve: 'gatsby-transformer-remark',
 			options: {
 				plugins: [
-					`gatsby-remark-reading-time`,
 					{
-						resolve: 'gatsby-remark-relative-images',
-						options: {
-							name: 'uploads'
-						}
+						resolve: `gatsby-remark-relative-images`,
 					},
 					{
 						resolve: 'gatsby-remark-images',
 						options: {
-							// It's important to specify the maxWidth (in pixels) of
-							maxWidth: 2048
-						}
+							maxWidth: 690,
+						},
 					},
 					{
-						resolve: 'gatsby-remark-copy-linked-files',
-						options: {
-							destinationDir: 'static'
-						}
-					}
-				]
-			}
+						resolve: 'gatsby-remark-responsive-iframe',
+					},
+					'gatsby-remark-copy-linked-files',
+					'gatsby-remark-autolink-headers',
+					'gatsby-remark-prismjs',
+				],
+			},
 		},
 		{
-			resolve: 'gatsby-plugin-netlify-cms',
+			resolve: 'gatsby-plugin-google-analytics',
 			options: {
-				modulePath: `${__dirname}/src/cms/cms.js`
-			}
+				trackingId: config.googleAnalyticsID,
+			},
 		},
 		{
-			resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+			resolve: 'gatsby-plugin-nprogress',
 			options: {
-				develop: true, // Activates purging in npm run develop
-				purgeOnly: ['/all.sass'] // applies purging only on the bulma css file
-			}
-		}, // must be after other CSS plugins
-		'gatsby-plugin-netlify' // make sure to keep it last in the array
-	]
+				color: config.themeColor,
+			},
+		},
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
+		'gatsby-plugin-playground',
+		'gatsby-plugin-styled-components',
+		'gatsby-plugin-transition-link',
+		'gatsby-plugin-catch-links',
+		'gatsby-plugin-twitter',
+		'gatsby-plugin-sitemap',
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: config.siteTitle,
+				short_name: config.siteTitleShort,
+				description: config.siteDescription,
+				start_url: config.pathPrefix,
+				background_color: config.backgroundColor,
+				theme_color: config.themeColor,
+				display: 'minimal-ui',
+				icons: [
+					{
+						src: '/logos/logo-192.png',
+						sizes: '192x192',
+						type: 'image/png',
+					},
+					{
+						src: '/logos/logo-512.png',
+						sizes: '512x512',
+						type: 'image/png',
+					},
+				],
+			},
+		},
+		'gatsby-plugin-offline',
+		{
+			resolve: 'gatsby-plugin-feed-mdx',
+			options: {
+				query: `
+        {
+          site {
+            siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+            }
+          }
+        }
+      `,
+				feeds: [
+					{
+						serialize: ({ query: { site, allMdx } }) => {
+							return allMdx.edges.map((edge) => {
+								return Object.assign({}, edge.node.frontmatter, {
+									description: edge.node.excerpt,
+									date: edge.node.frontmatter.date,
+									url:
+										site.siteMetadata.site_url +
+										'/blog' +
+										edge.node.fields.slug,
+									guid:
+										site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+									custom_elements: [{ 'content:encoded': edge.node.html }],
+								});
+							});
+						},
+						query: `
+            {
+              allMdx(
+                sort: { order: DESC, fields: [frontmatter___date] },
+              ) {
+                edges {
+                  node {
+                    id
+                    excerpt
+                    html
+                    timeToRead
+                    fields {
+                      slug
+                      date
+                    }
+                    frontmatter {
+                      title
+                      tags
+                      date
+                      category
+                      tags
+                    }
+                  }
+                }
+              }
+            }
+          `,
+						output: config.siteRss,
+						title: config.siteRssTitle,
+						match: '^/blog/',
+					},
+				],
+			},
+		},
+	],
 };
