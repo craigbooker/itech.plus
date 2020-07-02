@@ -17,7 +17,7 @@ module.exports = {
 			image_url: `${urljoin(
 				config.siteUrl,
 				config.pathPrefix
-			)}/logos/logo-512.png`,
+			)}/images/logos/logo-512.png`,
 			copyright: config.copyright,
 		},
 	},
@@ -105,6 +105,7 @@ module.exports = {
 		'gatsby-plugin-catch-links',
 		'gatsby-plugin-twitter',
 		'gatsby-plugin-sitemap',
+		'gatsby-plugin-netlify',
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
@@ -117,12 +118,12 @@ module.exports = {
 				display: 'minimal-ui',
 				icons: [
 					{
-						src: '/logos/logo-192.png',
+						src: '/images/icon/icon-192.png',
 						sizes: '192x192',
 						type: 'image/png',
 					},
 					{
-						src: '/logos/logo-512.png',
+						src: '/images/icon/icon-512.png',
 						sizes: '512x512',
 						type: 'image/png',
 					},
@@ -196,5 +197,12 @@ module.exports = {
 				],
 			},
 		},
+		{
+			resolve: 'gatsby-redirect-from',
+			options: {
+				query: 'allMdx',
+			},
+		},
+		'gatsby-plugin-meta-redirect', // make sure this is always the last one
 	],
 };

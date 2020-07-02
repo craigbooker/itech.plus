@@ -14,7 +14,7 @@ const FeaturedArticlesCard = ({ blog }) => {
 		<article className={styles.blog}>
 			<div className={styles.imgContainer}>
 				<Image fluid={img} className={styles.img} alt='single post' />
-				<AniLink fade className={styles.link} to={`/blog${slug}`}>
+				<AniLink fade className={styles.link} to={`${slug}`}>
 					read more
 				</AniLink>
 			</div>
@@ -22,8 +22,8 @@ const FeaturedArticlesCard = ({ blog }) => {
 				<h4>{title}</h4>
 				<h5>{author}</h5>
 				<p>{blog.excerpt}</p>
-				<p class={styles.readMore}>
-					<AniLink fade to={`/blog${slug}`} className={styles.blogCardBtn}>
+				<p className={styles.readMore}>
+					<AniLink fade to={`${slug}`} className={styles.blogCardBtn}>
 						read more
 					</AniLink>
 				</p>

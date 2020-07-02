@@ -12,7 +12,7 @@ const SeriesCard = ({ series }) => {
 		<article className={styles.blog}>
 			<div className={styles.imgContainer}>
 				<Image fluid={img} className={styles.img} alt='single post' />
-				<AniLink fade className={styles.link} to={`/blog${slug}`}>
+				<AniLink fade className={styles.link} to={`${slug}`}>
 					read more
 				</AniLink>
 			</div>
@@ -21,7 +21,7 @@ const SeriesCard = ({ series }) => {
 				<h5>{author}</h5>
 				<p>{series.excerpt}</p>
 				<p class={styles.readMore}>
-					<AniLink fade className={styles.blogCardBtn} to={`/blog${slug}`}>
+					<AniLink fade className={styles.blogCardBtn} to={`${slug}`}>
 						read more
 					</AniLink>
 				</p>

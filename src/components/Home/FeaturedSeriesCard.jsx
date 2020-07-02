@@ -22,7 +22,7 @@ const FeaturedSeriesCard = ({ series }) => {
 				<h4>{title}</h4>
 				<h5>{author}</h5>
 				<p>{series.excerpt}</p>
-				<p class={styles.readMore}>
+				<p className={styles.readMore}>
 					<AniLink fade className={styles.blogCardBtn} to={`/series${slug}`}>
 						read more
 					</AniLink>

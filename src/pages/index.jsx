@@ -12,6 +12,7 @@ import config from '../../data/SiteConfig';
 import Layout from '../components/layout';
 import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
+import SEO from '../components/SEO/SEO';
 import AboutSummary from '../components/Home/AboutSummary';
 import FeaturedArticles from '../components/Home/FeaturedArticles';
 import FeaturedSeries from '../components/Home/FeaturedSeries';
@@ -19,6 +20,7 @@ import FeaturedSeries from '../components/Home/FeaturedSeries';
 const HomePage = ({ data }) => {
 	return (
 		<Layout title='Home'>
+			<SEO />
 			<StyledHero>
 				<Banner title='Hello & welcome!' info='' />
 			</StyledHero>

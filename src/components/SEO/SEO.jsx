@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, withPrefix } from 'gatsby';
 import Image from 'gatsby-image';
 import urljoin from 'url-join';
 import config from '../../../data/SiteConfig';
@@ -136,6 +136,7 @@ const SEO = ({ postNode, postPath, postSEO }) => {
 			<meta name='title' content={title} />
 			<meta name='description' content={description} />
 			<meta name='image' content={image} />
+
 			<meta name='keywords' content={keywords} />
 			<meta name='publisher' content={config.siteTitleShort} />
 			<meta name='copyright' content={config.copyright} />

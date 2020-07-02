@@ -18,7 +18,7 @@ const Navbar = () => {
 			<div className={styles.navCenter}>
 				<div className={styles.navHeader}>
 					<AniLink fade className={styles.link} to={`/`}>
-						<img src={logo} alt='backroads logo' />
+						<img src={logo} alt='itechplus logo' />
 					</AniLink>
 					<button type='button' className={styles.logoBtn} onClick={toggleNav}>
 						<FaAlignRight className={styles.logoIcon} />
