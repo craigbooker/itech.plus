@@ -43,7 +43,7 @@ const config = {
 	],
 	copyright: 'Booker & Co LLC', // Copyright string for the footer of the website and RSS feed.
 	themeColor: '#000000', // Used for setting manifest and progress theme colors.
-	backgroundColor: '#e0e0e0', // Used for setting manifest background color.
+	backgroundColor: '#000000', // Used for setting manifest background color.
 };
 
 // Validate
