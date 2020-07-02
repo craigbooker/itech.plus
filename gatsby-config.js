@@ -118,12 +118,12 @@ module.exports = {
 				display: 'minimal-ui',
 				icons: [
 					{
-						src: '/images/icon/icon-192.png',
+						src: 'src/images/icon/icon-192.png',
 						sizes: '192x192',
 						type: 'image/png',
 					},
 					{
-						src: '/images/icon/icon-512.png',
+						src: 'src/images/icon/icon-512.png',
 						sizes: '512x512',
 						type: 'image/png',
 					},
